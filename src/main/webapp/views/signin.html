@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="uk">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400,900|Exo+2:200,400|Righteous|Monoton"
+          rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+            integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <title>Sign In</title>
+</head>
+<body class="bg-light">
+<div class="box overflow-hidden" id="start">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand text-uppercase text-purple" th:href="@{/}">Fun creator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-gamepad fa-2x"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/gallery}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/order}">Make an order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/feedbacks}">Feedbacks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contacts}">Contacts</a>
+                </li>
+
+            </ul>
+            <form class="form-inline ml-lg-5 my-2 my-lg-0">
+                <button id="login" class="btn btn-outline-light" type="button" data-toggle="modal"
+                        data-target="#myModal">Login
+                </button>
+            </form>
+        </div>
+    </nav>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success ml-auto">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-5" >
+
+
+        <h1 class="text-center py-5">Sign in</h1>
+        <form th:action="@{/signin}" method="post">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="username">Username</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="username" type="text" name="username" placeholder="username">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="password">Password</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="password" type="password" name="password" placeholder="password">
+                </div>
+            </div>
+            <input class="btn btn-success" type="submit" value="go!">
+            <input type="hidden"
+                   name="${_csrf.parameterName}"
+                   value="${_csrf.token}"/>
+        </form>
+
+    </div>
+    <footer id="contacts" class="bg-dark px-lg-5">
+        <div class="container-fluid px-lg-5">
+            <div class="row align-items-stretch justify-content-around py-5">
+                <div class="col-sm-6 col-md-3 mb-5 my-md-1 text-center">
+                    <h5 class="text-purple mb-3">Navigation</h5>
+                    <nav class="nav flex-column">
+                        <a class="nav-link active" th:href="@{/}">About</a>
+                        <a class="nav-link" th:href="@{/gallery}">Gallery</a>
+                        <a class="nav-link" th:href="@{/order}">Make an order</a>
+                        <a class="nav-link" th:href="@{/feedbacks}">Feedbacks</a>
+                        <a class="nav-link" th:href="@{/contacts}">Contacts</a>
+                    </nav>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-5 my-md-1 text-center">
+                    <h5 class="text-purple mb-3">Contacts</h5>
+                    <ul class="footer-contacts p-0">
+                        <li>
+                            <i class="fa fa-map-marker"></i> Lviv, Some Adress, 23
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i> +38 (065) 784 52 64
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i> <a class="text-light" href="mailto:admin@mysite .com">admin@mysite.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-5 my-md-1 text-center"><h5 class="text-purple mb-3">Working hours</h5>
+                    <div class="mb-5">
+                        <div class="">Monday - Thursday</div>
+                        <div class="">10:00 AM - 11:00 PM</div>
+                    </div>
+                    <div class="mb-5">
+                        <div class="">Friday - Sunday</div>
+                        <div class="">12:00 AM - 03:00 AM</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-5 my-md-1 text-center share ">
+                    <h5 class="text-purple mb-3">Share</h5>
+                    <nav class="nav flex-column">
+                        <a class="nav-link active" href="https://www.facebook.com" target="blank"><i
+                                class="fab fa-facebook fa-3x"></i></a>
+                        <a class="nav-link" href="https://twitter.com" target="blank"><i
+                                class="fab fa-twitter fa-3x"></i></a>
+                        <a class="nav-link" href="https://www.instagram.com" target="blank"><i
+                                class="fab fa-instagram fa-3x"></i></a>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="w-25 mx-auto mb-3 text-center">
+                <a class="" href="#start">Up</a>
+            </div>
+            <div class="row copy p-5">
+                <p class="">&copy; Tania KLueva</p>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+
+<script type="text/javascript" src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="webjars/jquery/3.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/popper.js"></script>
+</body>
+</html>

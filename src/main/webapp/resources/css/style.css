@@ -1,0 +1,327 @@
+.body{
+    position: relative
+}
+.box{
+    font-family: 'Exo 2', sans-serif;
+    background: url("/resources/images/images/accessory-buttons-console-275033.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+
+
+.banner{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    height: 100vh
+}
+
+.navbar-brand{
+    /*font-family: 'Righteous', cursive;*/
+
+    font-family: 'Monoton', cursive;
+    color: purple;
+
+}
+
+
+/*.navbar{*/
+/*background:linear-gradient(to bottom, black, transparent);*/
+/*}*/
+
+/*.navbar::before{*/
+/*content: "";*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*display: block;*/
+/*position: fixed;*/
+/*z-index: -100;*/
+/*top: 0;*/
+/*left: 0;*/
+/*transform: translateY(100%);*/
+/*background: snow;*/
+/*}*/
+
+/*.navbar:*/
+
+/*.navbar-dark .navbar-nav .nav-link {*/
+/*color: rgba(255,255,255,.9);*/
+/*border-bottom: solid 2px #1e7e34;*/
+/*margin-right: 10px;*/
+/*}*/
+
+/*.navbar-dark .navbar-nav .nav-link:hover{*/
+/*color:  #1e7e34;*/
+/*border-bottom: solid 4px snow;*/
+/*margin-right: 10px;*/
+/*}*/
+
+.navbar{
+    opacity: .9;
+}
+
+.navbar .nav-link{
+    border-bottom: 2px solid transparent;
+    color: snow !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 200;
+    transition: all .4s;
+}
+
+.navbar a.active, .navbar .nav-link:hover  {
+    border-bottom: 2px solid #AD56FF;
+}
+
+.navbar button      {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 200;
+}
+
+.navbar-toggler:focus{
+    color: snow!important;
+    outline: none;
+}
+/*.nav-link{*/
+/*border-bottom: 2px solid transparent;*/
+/*}*/
+
+
+
+#login{
+    border: 1px solid #AD56FF;
+}
+
+.jumbotron-fluid{
+    text-shadow:  0 0 7px black;
+    background: linear-gradient(to bottom, transparent, black);
+}
+
+.text-red{
+    color: maroon
+}
+
+.jumbotron-fluid h1{
+
+    font-family: 'Righteous', cursive;
+}
+
+@media (max-width: 575.98px) {
+    .jumbotron-fluid h1{
+        font-size: 2rem
+    }
+    .jumbotron-fluid p{
+        font-size: 1rem
+    }
+    .navbar-brand{
+        font-size: 1rem;
+
+    }
+
+    #about p{
+        font-size: .85rem;
+    }
+
+    #services button, #services li{
+        font-size: .8rem;
+    }
+
+    #services ul{
+        padding: 5px;
+    }
+}
+
+@media (min-width: 768px){
+    .jumbotron-fluid h1{
+        font-size: 3rem
+    }
+    .jumbotron-fluid p{
+        font-size: 1.5rem
+    }
+    .navbar-brand{
+        font-size: 2rem;
+
+    }
+}
+
+.bg-white-transparent{
+    background: rgba(249,251,247,0.5)
+}
+
+.w-65{
+    width: 65%
+}
+
+.bg-brown{
+    background: rgba(77,9,13,0.91)
+    /*background:linear-gradient(to bottom, rgba(77,9,13,0.91), transparent);*/
+}
+
+
+/*.content>div{*/
+/*height:1000px;*/
+/*}*/
+
+
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%
+}
+
+.carousel-caption{
+    /*font-size: 3rem;*/
+    text-shadow: 0 0 30px black;
+    background: linear-gradient(to bottom, transparent, black);
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 3rem
+}
+
+
+.overflow-hidden{
+    overflow: hidden
+}
+
+button.navbar-toggler{
+    border: none
+}
+
+#contacts iframe{
+    width: 100%;
+    height: 100%
+}
+
+.footer-contacts li{
+    padding: 0;
+    margin-bottom: 2rem;
+    list-style: none
+}
+
+footer{
+    border-top: 1px solid rgba(147, 147, 147, .4)
+}
+
+footer .copy{
+    border-top: 1px solid rgba(147, 147, 147, .4)
+}
+
+.text-purple{
+    color: #AD56FF
+}
+
+.bg-purple{
+    background: #AD56FF
+}
+
+footer{
+    font-size: .8rem;
+    color: rgba(240, 240, 240, .8);
+}
+footer a, share a{
+    color: rgba(240, 240, 240, .8);
+}
+footer a:hover, share a:hover{
+    color: #AD56FF;
+}
+
+#services button, #mygallery button{
+    background: transparent;
+    color: #AD56FF;
+    border: 1px solid #AD56FF;
+    transition: all .2s
+}
+
+#services button{
+    width: 100%;
+}
+
+#services button:hover, #mygallery button:hover{
+    background: #AD56FF;
+    color: snow
+}
+
+/*.rooms a:nth-child(3n+2){*/
+/*flex: 3;*/
+/*}*/
+/*.rooms a:nth-child(3n+1){*/
+/*flex: 3;*/
+/*}*/
+/*.rooms a:nth-child(3n){*/
+/*flex: 2;*/
+/*}*/
+.rooms div{
+    position: relative;
+    flex: 10 1 20em;
+}
+.rooms a{
+    transition: all 0.3s;
+}
+
+
+.rooms a:hover{
+    transform: scale(1.1);
+}
+
+.up{
+    bottom: 1rem;
+    right: 1rem;
+    height: 50px;
+    width: 50px;
+    opacity: .6;
+}
+
+.share{
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+
+@keyframes phone {
+    from{
+        transform: rotate(30deg);
+    }
+    to{
+        transform: rotate(-30deg);
+    }
+
+}
+
+.contacts div.phone{
+    border: 1px solid;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: 1rem auto;
+    transition: all .3s;
+
+}
+
+.contacts div.phone:hover{
+    transform: scale(1.1);
+
+}
+
+
+.contacts div.phone:hover .anim{
+    animation: phone .2s ease-in-out infinite alternate;
+
+}
+
+.user .nav-pills a.active {
+    background: #AD56FF;
+
+}
+
+.user .nav-pills a{
+    color: #2e0f30;
+}
+
+
+
+.user table{
+    box-shadow:  0 0 10px rgba(220, 220, 220, .8);;
+}

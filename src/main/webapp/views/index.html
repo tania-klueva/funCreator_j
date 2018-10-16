@@ -1,0 +1,305 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="uk">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400,900|Exo+2:200,400|Righteous|Monoton"
+          rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+            integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <title>Lorem</title>
+</head>
+<body>
+<div class="box overflow-hidden" id="start">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand text-uppercase text-purple" th:href="@{/}">Fun creator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-gamepad fa-2x"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/gallery}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/order}">Make an order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/feedbacks}">Feedbacks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contacts}">Contacts</a>
+                </li>
+
+            </ul>
+            <form class="form-inline ml-lg-5 my-2 my-lg-0">
+                <button id="login" class="btn btn-outline-light" type="button" data-toggle="modal"
+                        data-target="#myModal">Login
+                </button>
+            </form>
+        </div>
+    </nav>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success ml-auto">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="banner d-flex align-items-end bg-transparent">
+        <div class="jumbotron jumbotron-fluid p-3 mb-0">
+            <div class="text-right text-white w-65 ml-auto">
+                <h1 class="text-uppercase">Fun creator</h1>
+                <p class="lead">Got bored? Do not know what to do? Come to us, you will not regret it! We have
+                    everything to cheer you up and create a great mood! We are waiting for you!</p>
+                <a class="btn btn-dark btn-lg bg-purple" role="button" th:href="@{/order}">Order room</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div id="about" class="bg-light py-5 p-sm-5">
+            <div class="container px-md-5 pt-md-5">
+                <h1 class="text-center font-weight-light">About</h1>
+                <div class="row pt-5">
+                    <div class="col-md-6">
+                        <div class="image w-100">
+                            <img src="../resources/images/images/brush-happiness-joy-22221.jpg"
+                                 class="img-fluid rounded-circle">
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center align-items-center my-2">
+                        <p class="lead">The Fun Creator game studio invites fans of the best rest. Want to spend your
+                            time active? We have a bunch of different games for every taste! Are you tired after a
+                            business day or just want to relax? What could be better than watching a favorite movie with
+                            popcorn in a cozy atmosphere! You will get a separate room, so you do not have to worry
+                            about extra noise. We offer 6 rooms: 4 rooms for watching movies and
+                            video games, a billiard room and a room for table tennis. All rooms have comfortable sofas
+                            and a desk. In the room, you can additionally order any board games and food or drinks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="services" class="bg-light pt-md-5">
+
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+
+                <ul class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                    <li data-target="#carousel" data-slide-to="3"></li>
+                    <li data-target="#carousel" data-slide-to="4"></li>
+                    <li data-target="#carousel" data-slide-to="5"></li>
+                    <li data-target="#carousel" data-slide-to="6"></li>
+                    <li data-target="#carousel" data-slide-to="7"></li>
+                    <li data-target="#carousel" data-slide-to="8"></li>
+                </ul>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../resources/images/images/blur-close-up-device-442576.jpg" alt="Los Angeles">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../resources/images/images/abstract-analog-art-390089.jpg" alt="Chicago">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../resources/images/images/audio-concert-hand-33779.jpg" alt="New York" height="720">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../resources/images/images/adult-business-businesswoman-515169.jpg" alt="New York"
+                             height="720">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../resources/images/images/billiards-black-and-white-blur-735781.jpg" alt="New York"
+                             height="720">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../resources/images/images/bishop-board-game-checkers-65169.jpg" alt="New York"
+                             height="720">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../resources/images/images/black-board-bright-695266.jpg" alt="New York" height="720">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../resources/images/images/blur-close-up-equipment-976873.jpg" alt="New York"
+                             height="720">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../resources/images/images/foosball-fun-fuzboll-305267.jpg" alt="New York"
+                             height="720">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Lorem ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+        </div>
+
+        <footer id="contacts" class="bg-dark px-lg-5">
+            <div class="container-fluid px-lg-5">
+                <div class="row align-items-stretch justify-content-around py-5">
+                    <div class="col-sm-6 col-md-3 mb-5 my-md-1 text-center">
+                        <h5 class="text-purple mb-3">Navigation</h5>
+                        <nav class="nav flex-column">
+                            <a class="nav-link active" th:href="@{/}">About</a>
+                            <a class="nav-link" th:href="@{/gallery}">Gallery</a>
+                            <a class="nav-link" th:href="@{/order}">Make an order</a>
+                            <a class="nav-link" th:href="@{/feedbacks}">Feedbacks</a>
+                            <a class="nav-link" th:href="@{/contacts}">Contacts</a>
+                        </nav>
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-5 my-md-1 text-center">
+                        <h5 class="text-purple mb-3">Contacts</h5>
+                        <ul class="footer-contacts p-0">
+                            <li>
+                                <i class="fa fa-map-marker"></i> Lviv, Some Adress, 23
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i> +38 (065) 784 52 64
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i> <a class="text-light" href="mailto:admin@mysite .com">admin@mysite.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-5 my-md-1 text-center">
+                        <h5 class="text-purple mb-3">Working hours</h5>
+                        <div class="mb-5">
+                            <div class="">Monday - Thursday</div>
+                            <div class="">10:00 AM - 11:00 PM</div>
+                        </div>
+                        <div class="mb-5">
+                            <div class="">Friday - Sunday</div>
+                            <div class="">12:00 AM - 03:00 AM</div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-5 my-md-1 text-center share ">
+                        <h5 class="text-purple mb-3">Share</h5>
+                        <nav class="nav flex-column">
+                            <a class="nav-link active" href="https://www.facebook.com" target="blank"><i
+                                    class="fab fa-facebook fa-3x"></i></a>
+                            <a class="nav-link" href="https://twitter.com" target="blank"><i
+                                    class="fab fa-twitter fa-3x"></i></a>
+                            <a class="nav-link" href="https://www.instagram.com" target="blank"><i
+                                    class="fab fa-instagram fa-3x"></i></a>
+                        </nav>
+                    </div>
+
+                </div>
+                <div class="w-25 mx-auto mb-3 text-center">
+                    <a class="" href="#start">Up</a>
+                </div>
+                <div class="row copy p-5">
+                    <p class="">&copy; Tania Klueva</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
