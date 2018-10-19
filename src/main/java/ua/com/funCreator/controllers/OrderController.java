@@ -24,8 +24,6 @@ public class OrderController {
     @PostMapping("/order")
     public String createOrder(OrderDTO orderDTO){
         System.out.println(orderDTO);
-//        System.out.println(order);
-//        orderService.save(order);
         return "redirect:/order";
     }
 }
