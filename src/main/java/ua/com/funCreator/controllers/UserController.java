@@ -49,13 +49,28 @@ public class UserController {
     }
 
     @GetMapping("/signin")
-    public String signIn(){
-    return "signin";
+    public String signIn(Model model){
+        if (SecurityContextHolder.getContext().getAuthentication() != null &&
+                SecurityContextHolder.getContext().getAuthentication().isAuthenticated() &&
+                !(SecurityContextHolder.getContext().getAuthentication()
+                        instanceof AnonymousAuthenticationToken)) {
+            User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            return "redirect:/user";
+        }
+        return "signin";
     }
 
 
     @GetMapping("/signup")
     public String signUpUser(Model model){
+        if (SecurityContextHolder.getContext().getAuthentication() != null &&
+                SecurityContextHolder.getContext().getAuthentication().isAuthenticated() &&
+                //when Anonymous Authentication is enabled
+                !(SecurityContextHolder.getContext().getAuthentication()
+                        instanceof AnonymousAuthenticationToken)) {
+            User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            return "redirect:/user";
+        }
         model.addAttribute("error", null);
     return "signup";
     }
