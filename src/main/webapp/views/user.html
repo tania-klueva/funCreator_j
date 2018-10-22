@@ -108,33 +108,22 @@
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-orders" role="tabpanel"
                              aria-labelledby="v-pills-orders-tab">
-                            <table class="table">
+                            <p class="text-center text-muted" th:unless="${orders}">You haven`t any orders yet</p>
+                            <table class="table" th:if="${orders}">
                                 <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">№</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Time</th>
-                                    <th scope="col">Room</th>
+                                    <th scope="col">Amount of people</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>21.05.2018</td>
-                                    <td>19:00</td>
-                                    <td>Кімната для фільмів та ігор</td>
-                                </tr>
-                                <tr class="text-muted">
-                                    <th scope="row">2</th>
-                                    <td>6.05.2018</td>
-                                    <td>18:00</td>
-                                    <td>Кімната для тенісу</td>
-                                </tr>
-                                <tr class="text-muted">
-                                    <th scope="row">3</th>
-                                    <td>25.04.2018</td>
-                                    <td>19:00</td>
-                                    <td>Кімната для більярду</td>
+                                <tr  th:each="order: ${orders}">
+                                    <th scope="row">[[${order.getId()}]]</th>
+                                    <td>[[${order.getDate().toString()}]]</td>
+                                    <td>[[${order.getTime().toString()}]]</td>
+                                    <td>[[${order.getAmountOfPeople()}]]</td>
                                 </tr>
                                 </tbody>
                             </table>

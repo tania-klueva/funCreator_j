@@ -10,6 +10,7 @@ import ua.com.funCreator.models.User;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 
 @Service
 @Transactional
@@ -31,5 +32,15 @@ public class OrderServiceImpl implements OrderService {
         userOrder.setTime(Time.valueOf(orderDto.getTime()+":00"));
         userOrder.setUser(user);
         return orderDAO.save(userOrder);
+    }
+
+    @Override
+    public List<UserOrder> findAll() {
+        return orderDAO.findAll();
+    }
+
+    @Override
+    public List<UserOrder> findByUserId(long id) {
+        return orderDAO.findByUserId(id);
     }
 }
