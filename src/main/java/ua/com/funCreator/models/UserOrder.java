@@ -6,23 +6,26 @@ import java.sql.Time;
 import java.util.Objects;
 
 @Entity
-public class Order {
+public class UserOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
+    @Column
     private String phone;
-
+    @Column
     private Date date;
-
+    @Column
     private Time time;
-
+    @Column
     private short amountOfPeople;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private User user;
 
-    public Order(String phone, Date date, Time time, short amountOfPeople) {
+    public UserOrder() {
+    }
+
+    public UserOrder(String phone, Date date, Time time, short amountOfPeople) {
         this.phone = phone;
         this.date = date;
         this.time = time;
@@ -81,12 +84,12 @@ public class Order {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
-        return id == order.id &&
-                amountOfPeople == order.amountOfPeople &&
-                Objects.equals(phone, order.phone) &&
-                Objects.equals(date, order.date) &&
-                Objects.equals(time, order.time);
+        UserOrder userOrder = (UserOrder) o;
+        return id == userOrder.id &&
+                amountOfPeople == userOrder.amountOfPeople &&
+                Objects.equals(phone, userOrder.phone) &&
+                Objects.equals(date, userOrder.date) &&
+                Objects.equals(time, userOrder.time);
     }
 
     @Override
@@ -96,7 +99,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
+        return "UserOrder{" +
                 "id=" + id +
                 ", phone='" + phone + '\'' +
                 ", date=" + date +

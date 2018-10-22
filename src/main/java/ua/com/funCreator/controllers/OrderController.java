@@ -1,7 +1,5 @@
 package ua.com.funCreator.controllers;
 
-import com.mysql.fabric.xmlrpc.base.Data;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -10,12 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import ua.com.funCreator.dto.OrderDTO;
-import ua.com.funCreator.models.Order;
 import ua.com.funCreator.models.User;
 import ua.com.funCreator.services.orderService.OrderService;
-
-import java.sql.Date;
-import java.sql.Time;
 
 @Controller
 public class OrderController {
@@ -49,10 +43,7 @@ public class OrderController {
                 !(SecurityContextHolder.getContext().getAuthentication()
                         instanceof AnonymousAuthenticationToken)) {
             User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            Order order = new Order(orderDTO.getPhone(), Date.valueOf(orderDTO.getDate()), Time.valueOf(orderDTO.getTime()+":00"), orderDTO.getAmountOfPeople());
-            order.setUser(user);
-            System.out.println(order);
-            orderService.save(order);
+            orderService.save(orderDTO, user);
             return "redirect:/user";
         }
         return "redirect:/order";

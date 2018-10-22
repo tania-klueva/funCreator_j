@@ -45,10 +45,10 @@ public class User implements UserDetails{
     private boolean credentialsNonExpired = true;
 
     private boolean enabled = false;
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private Set<Feedback> feedbacks;
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
-    private Set<Order> orders;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<UserOrder> userOrders;
 
     public long getId() {
         return id;
@@ -98,12 +98,12 @@ public class User implements UserDetails{
         this.lastName = lastName;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
+    public Set<UserOrder> getUserOrders() {
+        return userOrders;
     }
 
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
+    public void setUserOrders(Set<UserOrder> userOrders) {
+        this.userOrders = userOrders;
     }
 
     @Override
