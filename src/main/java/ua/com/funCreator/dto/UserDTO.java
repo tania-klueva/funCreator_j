@@ -8,6 +8,8 @@ public class UserDTO {
 
     private String password;
 
+    private String passwordConfirmation;
+
     private String encodedPassword;
 
     private String firstName;
@@ -16,13 +18,6 @@ public class UserDTO {
 
     private String token;
 
-    public UserDTO(String username, String password, String encodedPassword, String firstName, String lastName) {
-        this.username = username;
-        this.password = password;
-        this.encodedPassword = encodedPassword;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 
     public UserDTO() {
     }
@@ -53,6 +48,14 @@ public class UserDTO {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    public String getPasswordConfirmation() {
+        return passwordConfirmation;
+    }
+
+    public void setPasswordConfirmation(String passwordConfirmation) {
+        this.passwordConfirmation = passwordConfirmation;
     }
 
     public String getUsername() {

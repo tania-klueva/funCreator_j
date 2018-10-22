@@ -45,9 +45,12 @@
 
             </ul>
             <form class="form-inline ml-lg-5 my-2 my-lg-0">
+
                 <button id="login" class="btn btn-outline-light" type="button" data-toggle="modal"
-                        data-target="#myModal">Login
+                        data-target="#myModal" th:unless="${user}">Login
                 </button>
+
+                <a href="" class="btn btn-outline-light" th:href="@{/user}" th:if="${user}">Profile</a>
             </form>
         </div>
     </nav>
@@ -74,12 +77,14 @@
                                 <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
                             </div>
                         </div>
+                        <button type="submit"  class="btn btn-success ml-auto">Submit</button>
                     </form>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success ml-auto">Submit</button>
+                    <a href="" class="text-dark mr-auto" th:href="@{/signup}">Do not have an account yet?</a>
+                    <button type="button" class="btn btn-danger ml-auto" data-dismiss="modal">Close</button>
+
                 </div>
 
             </div>
@@ -262,10 +267,11 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-4 my-2">
-                        <button type="submit" class="btn btn-dark bg-purple w-100">Submit</button>
+                        <button type="submit" class="btn btn-dark bg-purple w-100" th:if="${user}">Submit</button>
+                        <a th:href="@{/signin}"  class="btn btn-dark bg-purple w-100" th:unless="${user}" disabled>You need to sign in
+                            first
+                        </a>
                     </div>
-                </div>
             </form>
         </div>
     </div>

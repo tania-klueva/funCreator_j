@@ -47,6 +47,8 @@ public class User implements UserDetails{
     private boolean enabled = false;
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH, mappedBy = "user")
     private Set<Feedback> feedbacks;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
+    private Set<Order> orders;
 
     public long getId() {
         return id;
@@ -94,6 +96,14 @@ public class User implements UserDetails{
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 
     @Override

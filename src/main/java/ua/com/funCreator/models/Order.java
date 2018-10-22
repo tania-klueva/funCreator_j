@@ -1,9 +1,6 @@
 package ua.com.funCreator.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.Objects;
@@ -21,6 +18,16 @@ public class Order {
     private Time time;
 
     private short amountOfPeople;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private User user;
+
+    public Order(String phone, Date date, Time time, short amountOfPeople) {
+        this.phone = phone;
+        this.date = date;
+        this.time = time;
+        this.amountOfPeople = amountOfPeople;
+    }
 
     public long getId() {
         return id;
@@ -60,6 +67,14 @@ public class Order {
 
     public void setAmountOfPeople(short amountOfPeople) {
         this.amountOfPeople = amountOfPeople;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
